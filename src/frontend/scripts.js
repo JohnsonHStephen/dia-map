@@ -92,6 +92,37 @@ document.addEventListener('keydown', (event) => {
 });
 
 //*******************************************************************************
+//                          Click and Drag functionality
+//*******************************************************************************
+let isDragging = false;
+let startX, startY;
+
+mapContainer.addEventListener('mousedown', (event) => {
+    isDragging = true;
+    startX = event.clientX - posX;
+    startY = event.clientY - posY;
+    mapContainer.style.cursor = 'grabbing';
+});
+
+mapContainer.addEventListener('mousemove', (event) => {
+    if (isDragging) {
+        posX = event.clientX - startX;
+        posY = event.clientY - startY;
+        mapContainer.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`;
+    }
+});
+
+mapContainer.addEventListener('mouseup', () => {
+    isDragging = false;
+    mapContainer.style.cursor = 'grab';
+});
+
+mapContainer.addEventListener('mouseleave', () => {
+    isDragging = false;
+    mapContainer.style.cursor = 'grab';
+});
+
+//*******************************************************************************
 //                          Modal functionality
 //*******************************************************************************
 const modal = document.getElementById('modal');
@@ -115,5 +146,27 @@ closeModal.onclick = function() {
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = 'none';
+    }
+}
+
+//*******************************************************************************
+//                          Toggle functionality
+//*******************************************************************************
+const toggleMapButton = document.getElementById('toggleMap');
+const toggleHexGridButton = document.getElementById('toggleHexGrid');
+
+toggleMapButton.onclick = function() {
+    if (map.style.display === 'none') {
+        map.style.display = 'block';
+    } else {
+        map.style.display = 'none';
+    }
+}
+
+toggleHexGridButton.onclick = function() {
+    if (hexGrid.style.display === 'none') {
+        hexGrid.style.display = 'grid';
+    } else {
+        hexGrid.style.display = 'none';
     }
 }
