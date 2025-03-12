@@ -181,6 +181,7 @@ window.onclick = function(event) {
 //*******************************************************************************
 const toggleMapButton = document.getElementById('toggleMap');
 const toggleHexGridButton = document.getElementById('toggleHexGrid');
+const showLegendButton = document.getElementById('showLegend');
 
 toggleMapButton.onclick = function() {
     if (map.style.display === 'none') {
@@ -196,4 +197,14 @@ toggleHexGridButton.onclick = function() {
     } else {
         hexGrid.style.display = 'none';
     }
+}
+
+showLegendButton.onclick = function() {
+    fetch('/legend.html')
+        .then(response => response.text())
+        .then(html => {
+            modalContent.innerHTML = html;
+            modal.style.display = 'block';
+        })
+        .catch(err => console.error(err));
 }
