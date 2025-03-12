@@ -72,19 +72,15 @@ document.addEventListener('keydown', (event) => {
     const step = 10;
     switch (event.key) {
         case 'w':
-        case 'ArrowUp':
             posY += step;
             break;
         case 'a':
-        case 'ArrowLeft':
             posX += step;
             break;
         case 's':
-        case 'ArrowDown':
             posY -= step;
             break;
         case 'd':
-        case 'ArrowRight':
             posX -= step;
             break;
     }

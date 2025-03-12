@@ -12,11 +12,15 @@ body {
 }
 
 .menu-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     display: flex;
     justify-content: center;
     background-color: #333;
     padding: 10px;
+    z-index: 99;
 }
 
 .menu-bar button {
@@ -45,6 +49,11 @@ body {
     position: relative;
     width: 100%;
     aspect-ratio: 2550/1903;
+    min-width: 1275px;
+    min-height: 952px;
+    top: 0;
+    left: 0;
+    object-fit: contain;
     overflow: auto;
     background-image: url('images/Hex_Map.png');
     background-size: 100% 100%;
