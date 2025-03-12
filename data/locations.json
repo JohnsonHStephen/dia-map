@@ -1,0 +1,618 @@
+[
+    {
+        "grid": "A1",
+        "types": [ "mountains" ],
+        "locations": [
+            {
+                "id": "A1A",
+                "name": "AVERNIAN TARPIT"
+            }
+        ]
+    },
+    {
+        "grid": "B1",
+        "types": [ "mountains", "cracked" ],
+        "locations": [
+            {
+                "id": "B1A",
+                "name": "ARKHAN'S TOWER"
+            }
+        ]
+    },
+    {
+        "grid": "C1",
+        "types": [ "mountains" ],
+        "locations": [
+            {
+                "id": "C1A",
+                "name": "MONUMENT OF TIAMAT"
+            }
+        ]
+    },
+    {
+        "grid": "D1",
+        "types": [ "mountains" ],
+        "locations": [
+            {
+                "id": "D1A",
+                "name": "MALIGNANT TRIBUTARY"
+            }
+        ]
+    },
+    {
+        "grid": "E1",
+        "types": [ "mountains" ],
+        "locations": [
+            {
+                "id": "E1A",
+                "name": "WEATHERSTONE KEEP"
+            }
+        ]
+    },
+    {
+        "grid": "F1",
+        "types": [ "mountains" ],
+        "locations": [
+            {
+                "id": "F1A",
+                "name": "DROGOLOTH MINES"
+            }
+        ]
+    },
+    {
+        "grid": "G1",
+        "types": [ "mountains", "cracked" ],
+        "locations": [
+            {
+                "id": "G1A",
+                "name": "ADJUNCT COURT OF HELL"
+            }
+        ]
+    },
+    {
+        "grid": "H1",
+        "types": [ "mountains" ],
+        "locations": [
+            {
+                "id": "H1A",
+                "name": "THE DUMP"
+            }
+        ]
+    },
+    {
+        "grid": "I1",
+        "types": [ "mountains" ],
+        "locations": [
+            {
+                "id": "I1A",
+                "name": "MIRROR OF MEPHISTAR"
+            }
+        ]
+    },
+    {
+        "grid": "J1",
+        "types": [ "mountains" ],
+        "locations": [
+            {
+                "id": "J1A",
+                "name": "SIEGEWORKS OF DIS"
+            }
+        ]
+    },
+    {
+        "grid": "A2",
+        "types": [],
+        "locations": [
+            {
+                "id": "A2A",
+                "name": "OBELISK OF UBBALUX"
+            }
+        ]
+    },
+    {
+        "grid": "B2",
+        "types": [],
+        "locations": [
+            {
+                "id": "B2A",
+                "name": "FERRYMAN'S PORTS"
+            },
+            {
+                "id": "B2B",
+                "name": "ALVSKRAEMA CARAVANSERAI"
+            }
+        ]
+    },
+    {
+        "grid": "C2",
+        "types": [],
+        "locations": [
+            {
+                "id": "C2A",
+                "name": "PILLAR OF SKULLS"
+            }
+        ]
+    },
+    {
+        "grid": "D2",
+        "types": [ "cracked" ],
+        "locations": [
+            {
+                "id": "D2A",
+                "name": "WARLORD LAIR: CAROL D'VOWN"
+            },
+            {
+                "id": "D2B",
+                "name": "THE SHUMMRATH DAM"
+            }
+        ]
+    },
+    {
+        "grid": "E2",
+        "types": [ "cracked" ],
+        "locations": [
+            {
+                "id": "E2A",
+                "name": "TENTACULAR MINE"
+            }
+        ]
+    },
+    {
+        "grid": "F2",
+        "types": [],
+        "locations": [
+            {
+                "id": "F2A",
+                "name": "THE PURPLE CITY"
+            }
+        ]
+    },
+    {
+        "grid": "G2",
+        "types": [],
+        "locations": [
+            {
+                "id": "G2A",
+                "name": "DRETCH CRACK"
+            },
+            {
+                "id": "G2B",
+                "name": "STYGIAN RAMPS"
+            }
+        ]
+    },
+    {
+        "grid": "H2",
+        "types": [ "volcano" ],
+        "locations": [
+            {
+                "id": "H2A",
+                "name": "BEL'S FORGE"
+            }
+        ]
+    },
+    {
+        "grid": "I2",
+        "types": [],
+        "locations": [
+            {
+                "id": "I2A",
+                "name": "WARLORD LAIR: FEONOR'S LAIR"
+            }
+        ]
+    },
+    {
+        "grid": "J2",
+        "types": [ "hills" ],
+        "locations": [
+            {
+                "id": "J2A",
+                "name": "KOSTCHTCHIE'S MAW"
+            }
+        ]
+    },
+    {
+        "grid": "A3",
+        "types": [],
+        "locations": [
+            {
+                "id": "A3A",
+                "name": "OOZE HARVESTERS"
+            }
+        ]
+    },
+    {
+        "grid": "B3",
+        "types": [],
+        "locations": [
+            {
+                "id": "B3A",
+                "name": "WITCH-QUEEN'S ABODE"
+            }
+        ]
+    },
+    {
+        "grid": "C3",
+        "types": [ "cracked" ],
+        "locations": [
+            {
+                "id": "C3A",
+                "name": "BAAZIT'S CAGE"
+            }
+        ]
+    },
+    {
+        "grid": "D3",
+        "types": [ "hills" ],
+        "locations": [
+            {
+                "id": "D3A",
+                "name": "DEMON ZAPPER"
+            }
+        ]
+    },
+    {
+        "grid": "E3",
+        "types": [ "hills" ],
+        "locations": [
+            {
+                "id": "E3A",
+                "name": "HELLWASP NEST"
+            }
+        ]
+    },
+    {
+        "grid": "F3",
+        "types": [ "hills" ],
+        "locations": [
+            {
+                "id": "F3A",
+                "name": "VALE OF DEMONS"
+            }
+        ]
+    },
+    {
+        "grid": "G3",
+        "types": [ "cracked" ],
+        "locations": [
+            {
+                "id": "G3A",
+                "name": "HARUMAN'S HILL"
+            }
+        ]
+    },
+    {
+        "grid": "H3",
+        "types": [],
+        "locations": [
+            {
+                "id": "H3A",
+                "name": "DOCK OF FALLEN CITIES / ELTUREL"
+            }
+        ]
+    },
+    {
+        "grid": "I3",
+        "types": [ "bogs" ],
+        "locations": [
+            {
+                "id": "I3A",
+                "name": "CIRCLE OF FLAMES"
+            }
+        ]
+    },
+    {
+        "grid": "J3",
+        "types": [ "bogs" ],
+        "locations": [
+            {
+                "id": "J3A",
+                "name": "WARLORD LAIR: GOREGUTS GANG"
+            }
+        ]
+    },
+    {
+        "grid": "A4",
+        "types": [],
+        "locations": [
+            {
+                "id": "A4A",
+                "name": "ARCHES OF ULLOCH"
+            }
+        ]
+    },
+    {
+        "grid": "B4",
+        "types": [ "hills", "brambles" ],
+        "locations": [
+            {
+                "id": "B4A",
+                "name": "RED RUTH'S LAIR"
+            }
+        ]
+    },
+    {
+        "grid": "C4",
+        "types": [ "hills" ],
+        "locations": [
+            {
+                "id": "C4A",
+                "name": "TEMPLE OF DAK-THAEL"
+            }
+        ]
+    },
+    {
+        "grid": "D4",
+        "types": [],
+        "locations": [
+            {
+                "id": "D4A",
+                "name": "BLOODY CRESCENT"
+            }
+        ]
+    },
+    {
+        "grid": "E4",
+        "types": [],
+        "locations": [
+            {
+                "id": "E4A",
+                "name": "TOWER OF URM"
+            }
+        ]
+    },
+    {
+        "grid": "F4",
+        "types": [],
+        "locations": [
+            {
+                "id": "F4A",
+                "name": "BLOODY CYST"
+            }
+        ]
+    },
+    {
+        "grid": "G4",
+        "types": [ "hills" ],
+        "locations": [
+            {
+                "id": "G4A",
+                "name": "POOL OF ICHOR"
+            }
+        ]
+    },
+    {
+        "grid": "H4",
+        "types": [],
+        "locations": [
+            {
+                "id": "H4A",
+                "name": "STYGIAN DOCK"
+            }
+        ]
+    },
+    {
+        "grid": "I4",
+        "types": [],
+        "locations": [
+            {
+                "id": "I4A",
+                "name": "FORT KNUCKLEBONES"
+            }
+        ]
+    },
+    {
+        "grid": "J4",
+        "types": [ "brambles" ],
+        "locations": [
+            {
+                "id": "J4A",
+                "name": "TEMPLE OF THE BROKEN PRINCE"
+            }
+        ]
+    },
+    {
+        "grid": "A5",
+        "types": [ "mountains" ],
+        "locations": [
+            {
+                "id": "A5A",
+                "name": "WARLORD LAIR: THE LOST GOLGARI"
+            }
+        ]
+    },
+    {
+        "grid": "B5",
+        "types": [ "ashlands" ],
+        "locations": [
+            {
+                "id": "B5A",
+                "name": "BONE CRATER"
+            }
+        ]
+    },
+    {
+        "grid": "C5",
+        "types": [ "ashlands" ],
+        "locations": [
+            {
+                "id": "C5A",
+                "name": "CRYPT OF THE HELLRIDERS"
+            }
+        ]
+    },
+    {
+        "grid": "D5",
+        "types": [ "fire" ],
+        "locations": [
+            {
+                "id": "D5A",
+                "name": "ULDRAK'S GRAVE"
+            }
+        ]
+    },
+    {
+        "grid": "E5",
+        "types": [ "fire" ],
+        "locations": [
+            {
+                "id": "E5A",
+                "name": "SIBRIEX"
+            }
+        ]
+    },
+    {
+        "grid": "F5",
+        "types": [ "fire" ],
+        "locations": [
+            {
+                "id": "F5A",
+                "name": "THAT'S A BIG SPEAR"
+            }
+        ]
+    },
+    {
+        "grid": "G5",
+        "types": [],
+        "locations": [
+            {
+                "id": "G5A",
+                "name": "ZARIEL'S BRIDGE"
+            },
+            {
+                "id": "G5B",
+                "name": "PLAGUESHIELD POINT"
+            }
+        ]
+    },
+    {
+        "grid": "H5",
+        "types": [],
+        "locations": [
+            {
+                "id": "H5A",
+                "name": "ELEMENTAL GALLEON"
+            }
+        ]
+    },
+    {
+        "grid": "I5",
+        "types": [ "volcano" ],
+        "locations": [
+            {
+                "id": "I5A",
+                "name": "SPAWNING TREES"
+            }
+        ]
+    },
+    {
+        "grid": "J5",
+        "types": [ "brambles" ],
+        "locations": [
+            {
+                "id": "J5A",
+                "name": "WARLORD LAIR: THE EIGHTH REMNANT"
+            }
+        ]
+    },
+    {
+        "grid": "A6",
+        "types": [ "mountains" ],
+        "locations": [
+            {
+                "id": "A6A",
+                "name": "WARLORD LAIR: BITTER BREATH'S MARAUDERS"
+            }
+        ]
+    },
+    {
+        "grid": "B6",
+        "types": [ "mountains" ],
+        "locations": [
+            {
+                "id": "B6A",
+                "name": "WARLORD LAIR: SOUL COLLECTORS"
+            }
+        ]
+    },
+    {
+        "grid": "C6",
+        "types": [ "mountains" ],
+        "locations": [
+            {
+                "id": "C6A",
+                "name": "AVERNUS THAT WAS"
+            }
+        ]
+    },
+    {
+        "grid": "D6",
+        "types": [ "mountains" ],
+        "locations": [
+            {
+                "id": "D6A",
+                "name": "ELDER TEMPEST"
+            }
+        ]
+    },
+    {
+        "grid": "E6",
+        "types": [ "mountains" ],
+        "locations": [
+            {
+                "id": "E6A",
+                "name": "DISCORDANT SPIRE"
+            }
+        ]
+    },
+    {
+        "grid": "F6",
+        "types": [ "mountains" ],
+        "locations": [
+            {
+                "id": "F6A",
+                "name": "RUINS OF A WARLORD'S LAIR"
+            }
+        ]
+    },
+    {
+        "grid": "G6",
+        "types": [ "mountains" ],
+        "locations": [
+            {
+                "id": "G6A",
+                "name": "WRECKED FLYING FORTRESS"
+            }
+        ]
+    },
+    {
+        "grid": "H6",
+        "types": [ "mountains", "volcano" ],
+        "locations": [
+            {
+                "id": "H6A",
+                "name": "MODRON OUTPOST"
+            }
+        ]
+    },
+    {
+        "grid": "I6",
+        "types": [],
+        "locations": [
+            {
+                "id": "I6A",
+                "name": "SHADOWSWIMMER TOWER"
+            }
+        ]
+    },
+    {
+        "grid": "J6",
+        "types": [ "hills" ],
+        "locations": [
+            {
+                "id": "J6A",
+                "name": "CAMP OF THE 9th COHORT"
+            }
+        ]
+    }
+]
