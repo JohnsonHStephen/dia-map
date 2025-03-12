@@ -1,5 +1,6 @@
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -7,39 +8,52 @@ body {
     background-color: #f0f0f0;
 }
 
+.menu-bar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 10px;
+}
+
+.menu-bar button {
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.menu-bar button:hover {
+    background-color: #555;
+}
+
 .map-container {
     position: relative;
     width: 100%;
     aspect-ratio: 2550/1903;
     overflow: hidden;
+    background-image: url('images/Hex_Map.png');
+    background-size: 100% 100%;
+    transition: transform 0.3s ease;
 }
 
 .map {
     position: absolute;
     width: 92%;
-    height: 89%;
-    background: url('images/map.jpg') no-repeat center center;
+    height: 91%;
+    background-image: url('images/map.jpg');
     background-size: 100% 100%;
     transition: transform 0.3s ease;
-    margin-top: 5%;
-    margin-left: 5%;
-}
-
-.hex-map {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: url('images/Hex_Map.png') no-repeat center center;
-    background-size: cover;
-    transition: transform 0.3s ease;
+    top: 6%;
+    left: 5%;
 }
 
 .hex-grid {
     position: absolute;
-    top: 0;
-    left: 0;
-    padding-top: 6%;
-    padding-left: 6%;
+    top: 8%;
+    left: 6%;
     width: 88%;
     height: 82%;
     display: grid;
