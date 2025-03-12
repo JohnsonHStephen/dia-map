@@ -123,6 +123,18 @@ mapContainer.addEventListener('mouseleave', () => {
 });
 
 //*******************************************************************************
+//                          Random Encounter Toggle
+//*******************************************************************************
+const toggleRandomEncounterButton = document.getElementById('toggleRandomEncounter');
+
+toggleRandomEncounterButton.onclick = function() {
+    if (toggleRandomEncounterButton.className === "pressed") {
+        toggleRandomEncounterButton.className = "";
+    } else
+        toggleRandomEncounterButton.className = "pressed";
+}
+
+//*******************************************************************************
 //                          Modal functionality
 //*******************************************************************************
 const modal = document.getElementById('modal');
@@ -130,13 +142,26 @@ const modalContent = document.getElementById('modalContent');
 const closeModal = document.getElementById('closeModal');
 
 function showModal(gridId) {
-    fetch(`/grids/${gridId}.html`)
-        .then(response => response.text())
-        .then(html => {
-            modalContent.innerHTML = html;
-            modal.style.display = 'block';
+    if (toggleRandomEncounterButton.className === "pressed") {
+        fetch(`/random/${gridId}`, {
+            method: 'GET',
+            headers: { 'Content-Type': 'text/html' },
         })
-        .catch(err => console.error(err));
+            .then(response => response.text())
+            .then(html => {
+                modalContent.innerHTML = html;
+                modal.style.display = 'block';
+            })
+            .catch(err => console.error(err));
+    } else {
+        fetch(`/grids/${gridId}.html`)
+            .then(response => response.text())
+            .then(html => {
+                modalContent.innerHTML = html;
+                modal.style.display = 'block';
+            })
+            .catch(err => console.error(err));
+    }
 }
 
 closeModal.onclick = function() {

@@ -11,7 +11,7 @@
     },
     {
         "grid": "B1",
-        "types": [ "mountains", "cracked" ],
+        "types": [ "mountains" ],
         "locations": [
             {
                 "id": "B1A",
@@ -61,7 +61,7 @@
     },
     {
         "grid": "G1",
-        "types": [ "mountains", "cracked" ],
+        "types": [ "mountains" ],
         "locations": [
             {
                 "id": "G1A",
@@ -111,7 +111,7 @@
     },
     {
         "grid": "B2",
-        "types": [],
+        "types": [ "pit" ],
         "locations": [
             {
                 "id": "B2A",
@@ -135,7 +135,7 @@
     },
     {
         "grid": "D2",
-        "types": [ "cracked" ],
+        "types": [ "pit" ],
         "locations": [
             {
                 "id": "D2A",
@@ -149,7 +149,7 @@
     },
     {
         "grid": "E2",
-        "types": [ "cracked" ],
+        "types": [],
         "locations": [
             {
                 "id": "E2A",
@@ -203,7 +203,7 @@
     },
     {
         "grid": "J2",
-        "types": [ "hills" ],
+        "types": [],
         "locations": [
             {
                 "id": "J2A",
@@ -213,7 +213,7 @@
     },
     {
         "grid": "A3",
-        "types": [],
+        "types": [ "pit" ],
         "locations": [
             {
                 "id": "A3A",
@@ -233,7 +233,7 @@
     },
     {
         "grid": "C3",
-        "types": [ "cracked" ],
+        "types": [ "pit" ],
         "locations": [
             {
                 "id": "C3A",
@@ -243,7 +243,7 @@
     },
     {
         "grid": "D3",
-        "types": [ "hills" ],
+        "types": [],
         "locations": [
             {
                 "id": "D3A",
@@ -253,7 +253,7 @@
     },
     {
         "grid": "E3",
-        "types": [ "hills" ],
+        "types": [],
         "locations": [
             {
                 "id": "E3A",
@@ -263,7 +263,7 @@
     },
     {
         "grid": "F3",
-        "types": [ "hills" ],
+        "types": [],
         "locations": [
             {
                 "id": "F3A",
@@ -273,7 +273,7 @@
     },
     {
         "grid": "G3",
-        "types": [ "cracked" ],
+        "types": [],
         "locations": [
             {
                 "id": "G3A",
@@ -323,7 +323,7 @@
     },
     {
         "grid": "B4",
-        "types": [ "hills", "brambles" ],
+        "types": [ "brambles" ],
         "locations": [
             {
                 "id": "B4A",
@@ -333,7 +333,7 @@
     },
     {
         "grid": "C4",
-        "types": [ "hills" ],
+        "types": [],
         "locations": [
             {
                 "id": "C4A",
@@ -373,7 +373,7 @@
     },
     {
         "grid": "G4",
-        "types": [ "hills" ],
+        "types": [],
         "locations": [
             {
                 "id": "G4A",
@@ -607,7 +607,7 @@
     },
     {
         "grid": "J6",
-        "types": [ "hills" ],
+        "types": [],
         "locations": [
             {
                 "id": "J6A",
