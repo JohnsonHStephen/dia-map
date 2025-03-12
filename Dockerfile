@@ -9,13 +9,11 @@ RUN apt-get update -y
 
 COPY . /app
 WORKDIR /app
-RUN mkdir /app/data
 
 EXPOSE 9876
 
 RUN pnpm install --force
 
 ENV NODE_ENV=production
-ENV PORT ${PORT?perterror}
 
 CMD ["pnpm", "start"]

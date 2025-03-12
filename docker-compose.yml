@@ -1,0 +1,10 @@
+services:
+  dia-hex-map:
+    container_name: dia-hex-map
+    build: .
+    ports:
+      - "9876:9876"
+    environment:
+      - PORT=9876
+    command: pnpm run start
+    restart: unless-stopped
