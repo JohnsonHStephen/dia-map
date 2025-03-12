@@ -8,3 +8,10 @@ services:
       - PORT=9876
     command: pnpm run start
     restart: unless-stopped
+    networks:
+      - network
+
+networks:
+  network:
+    name: my-bridge-network
+    external: true
