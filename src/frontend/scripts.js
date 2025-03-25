@@ -180,10 +180,30 @@ function createModalWithEdit(content, gridId, locationId) {
     const modalMenuBar = document.createElement('div');
     modalMenuBar.className = 'modal-menu-bar';
 
+    const rawButton = document.createElement('button');
+    rawButton.className = 'raw-modal';
+    rawButton.textContent = 'Raw';
+    rawButton.style.display = "none";
+    rawButton.onclick = function () {
+        if (!modalContent.isContentEditable)
+            return;
+
+        if (rawButton.className === "raw-modal pressed") {
+            rawButton.className = "raw-modal";
+            modalContent.innerHTML = modalContent.innerText;
+        } else {
+            modalContent.innerText = modalContent.innerHTML;
+            rawButton.className = "raw-modal pressed";
+        }
+    }
+
+
     const editButton = document.createElement('button');
+    editButton.className = 'edit-modal';
     editButton.textContent = 'Edit';
     editButton.onclick = function () {
         if (modalContent.isContentEditable) {
+            rawButton.style.display = "none";
             modalContent.contentEditable = "false";
             editButton.textContent = "Edit";
             // Save the content
@@ -201,20 +221,50 @@ function createModalWithEdit(content, gridId, locationId) {
                 })
                 .catch(err => console.error(err));
         } else {
+            rawButton.style.display = "block";
             modalContent.contentEditable = "true";
             editButton.textContent = "Save";
         }
     };
 
+    // Add Location Button
+    const addLocationButton = document.createElement('button');
+    addLocationButton.className = 'add-location';
+    addLocationButton.innerHTML = '&plus;';
+    addLocationButton.onclick = function () {
+        const name = prompt('Enter the name of the location');
+        if (!name) return;
+        fetch(`/location/${gridId}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name: name })
+        })
+            .then(response => {
+                if (response.ok) {
+                    return response.text();
+                } else {
+                    throw new Error('Failed to add location');
+                }
+            })
+            .then(message => {
+                closeModals();
+                showModal(gridId);
+            })
+            .catch(err => console.error(err));
+    };
+
+    // Close Button
     const closeButton = document.createElement('span');
-    closeButton.className = 'close';
+    closeButton.className = 'close-modal';
     closeButton.innerHTML = '&times;';
     closeButton.onclick = function () {
         modal.style.display = 'none';
         modal.remove();
     };
 
+    modalMenuBar.appendChild(rawButton);
     modalMenuBar.appendChild(editButton);
+    modalMenuBar.appendChild(addLocationButton);
     modalMenuBar.appendChild(closeButton);
 
     modalContent.innerHTML = content;

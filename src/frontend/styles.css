@@ -142,6 +142,7 @@ body {
 
 .modal {
     margin: 15% auto;
+    margin-bottom: -12%;
     background-color: #fefefe;
     border: 1px solid #888;
     position: relative;
@@ -160,7 +161,81 @@ body {
     border-bottom: 1px solid #888;
 }
 
-.modal-content #modalContent {
+.modal-menu-bar .edit-modal {
+    background-color: #007ef5;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.modal-menu-bar .edit-modal:hover {
+    background-color: #77b5ee;
+}
+
+.modal-menu-bar .close-modal {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.modal-menu-bar .close-modal:hover {
+    background-color: #ff7f7f;
+}
+
+.modal-menu-bar .add-location {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.modal-menu-bar .add-location:hover {
+    background-color: #45a049;
+}
+
+.modal-menu-bar .delete-location {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.modal-menu-bar .delete-location:hover {
+    background-color: #ff7f7f;
+}
+
+.modal-menu-bar .raw-modal {
+    background-color: #ac4caf;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.modal-menu-bar .raw-modal:hover {
+    background-color: #d17fd1;
+}
+
+.modal-menu-bar .raw-modal.pressed {
+    background-color: #4cafa2;
+    color: white;
+}
+
+.modal-menu-bar .raw-modal.pressed:hover {
+    background-color: #7fd1c9;
+}
+
+.modal-content {
     padding: 20px;
 }
 

@@ -57,7 +57,12 @@ app.post('/location/:grid', (req, res) => {
             number++;
         }
 
-        fs.writeFileSync(path.join(gridPath, number + '.html'), req.body.content || '', { flag: 'w' });
+        const location = column + row + '(' + number + ')';
+        const name = req.body.name || location;
+
+        const locationTitle = '<p style="text-align: center;"><big><strong>' + location + '. ' + name + '</strong></big></p>'
+
+        fs.writeFileSync(path.join(gridPath, number + '.html'), locationTitle, { flag: 'w' });
         res.status(201).send(`Grid ${column}${row}${number} created`);
     } catch (err) {
         console.error(err);
