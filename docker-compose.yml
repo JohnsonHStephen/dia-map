@@ -11,6 +11,31 @@ services:
     networks:
       - network
 
+  mariadb:
+    container_name: dia-mariadb
+    image: mariadb:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: dia_hex_map
+      MYSQL_USER: dia_hex_map
+      MYSQL_PASSWORD: dia_hex_map
+    volumes:
+      - /home/sjohnson/data/dia/mysql:/var/lib/mysql
+    restart: unless-stopped
+    networks:
+      - network
+
+  adminer:
+    container_name: dia-adminer
+    image: adminer:latest
+    ports:
+      - "38848:8080"
+    environment:
+      ADMINER_DEFAULT_SERVER: dia-mariadb
+    restart: unless-stopped
+    networks:
+      - network
+
 networks:
   network:
     name: my-bridge-network

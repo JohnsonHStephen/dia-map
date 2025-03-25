@@ -133,9 +133,99 @@ toggleRandomEncounterButton.onclick = function() {
 //*******************************************************************************
 //                          Modal functionality
 //*******************************************************************************
-const modal = document.getElementById('modal');
-const modalContent = document.getElementById('modalContent');
-const closeModal = document.getElementById('closeModal');
+const modals = document.getElementById('modals');
+let grid = 0;
+let number = 0;
+
+function createModal(content) {
+    const modal = document.createElement('div');
+    modal.className = 'modal';
+    modal.id = `modal-${number}`;
+    number += 1;
+
+    const modalContent = document.createElement('div');
+    modalContent.className = 'modal-content';
+
+    const modalMenuBar = document.createElement('div');
+    modalMenuBar.className = 'modal-menu-bar';
+
+    const closeButton = document.createElement('span');
+    closeButton.className = 'close';
+    closeButton.innerHTML = '&times;';
+    closeButton.onclick = function () {
+        modal.style.display = 'none';
+        modal.remove();
+    };
+
+    modalMenuBar.appendChild(closeButton);
+
+    modalContent.innerHTML = content;
+
+    modal.appendChild(modalMenuBar);
+    modal.appendChild(modalContent);
+
+    modals.appendChild(modal);
+
+    modals.style.display = 'block'; 
+}
+
+function createModalWithEdit(content, gridId, locationId) {
+    const modal = document.createElement('div');
+    modal.className = 'modal';
+    modal.id = `modal-${gridId}-${locationId}`;
+
+    const modalContent = document.createElement('div');
+    modalContent.className = 'modal-content';
+
+    const modalMenuBar = document.createElement('div');
+    modalMenuBar.className = 'modal-menu-bar';
+
+    const editButton = document.createElement('button');
+    editButton.textContent = 'Edit';
+    editButton.onclick = function () {
+        if (modalContent.isContentEditable) {
+            modalContent.contentEditable = "false";
+            editButton.textContent = "Edit";
+            // Save the content
+            fetch(`/location/${gridId}/${locationId}`, {
+                method: 'PATCH',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ content: modalContent.innerHTML })
+            })
+                .then(response => {
+                    if (response.ok) {
+                        console.log('Content saved');
+                    } else {
+                        console.log('Failed to save content');
+                    }
+                })
+                .catch(err => console.error(err));
+        } else {
+            modalContent.contentEditable = "true";
+            editButton.textContent = "Save";
+        }
+    };
+
+    const closeButton = document.createElement('span');
+    closeButton.className = 'close';
+    closeButton.innerHTML = '&times;';
+    closeButton.onclick = function () {
+        modal.style.display = 'none';
+        modal.remove();
+    };
+
+    modalMenuBar.appendChild(editButton);
+    modalMenuBar.appendChild(closeButton);
+
+    modalContent.innerHTML = content;
+
+    modal.appendChild(modalMenuBar);
+    modal.appendChild(modalContent);
+
+    modals.appendChild(modal);
+
+    modals.style.display = 'block';
+}
 
 function showModal(gridId) {
     if (toggleRandomEncounterButton.className === "pressed") {
@@ -145,34 +235,45 @@ function showModal(gridId) {
         })
             .then(response => response.text())
             .then(html => {
-                modalContent.innerHTML = html;
-                modal.style.display = 'block';
+                createModal(html);
             })
             .catch(err => console.error(err));
     } else {
-        fetch(`/grids/${gridId}.html`)
+        fetch(`/grids/${gridId}`)
             .then(response => response.text())
-            .then(html => {
-                modalContent.innerHTML = html;
-                modal.style.display = 'block';
+            .then(locations => {
+                console.log(locations);
+                for (const location of locations.split(',')) {
+                    if (location === '') continue;
+                    console.log(location);
+                    fetch(`/location/${gridId}/${location}`)
+                    .then(response => response.text())
+                    .then(content => {
+                        createModalWithEdit(content, gridId, location);
+                    })
+                    .catch(err => console.error(err));
+                }
             })
             .catch(err => console.error(err));
     }
 }
 
-closeModal.onclick = function() {
-    modal.style.display = 'none';
+function closeModals() {
+    modals.style.display = 'none';
+
+    while (modals.firstChild)
+        modals.removeChild(modals.firstChild);
 }
 
 window.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
-        modal.style.display = 'none';
+        closeModals();
     }
 });
 
 window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = 'none';
+    if (event.target == modals) {
+        closeModals();
     }
 }
 
@@ -203,8 +304,7 @@ showLegendButton.onclick = function() {
     fetch('/legend.html')
         .then(response => response.text())
         .then(html => {
-            modalContent.innerHTML = html;
-            modal.style.display = 'block';
+            createModal(html);
         })
         .catch(err => console.error(err));
 }
