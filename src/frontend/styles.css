@@ -174,19 +174,6 @@ body {
     background-color: #77b5ee;
 }
 
-.modal-menu-bar .close-modal {
-    background-color: #f44336;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin: 0 10px;
-    cursor: pointer;
-}
-
-.modal-menu-bar .close-modal:hover {
-    background-color: #ff7f7f;
-}
-
 .modal-menu-bar .add-location {
     background-color: #4CAF50;
     color: white;
