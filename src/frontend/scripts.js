@@ -201,6 +201,9 @@ function createModalWithEdit(content, gridId, locationId) {
     deleteButton.className = 'delete-location';
     deleteButton.textContent = 'Delete';
     deleteButton.onclick = function () {
+        const confirmation = confirm('Are you sure you want to delete this location?');
+        if (!confirmation) return;
+
         fetch(`/location/${gridId}/${locationId}`, {
             method: 'DELETE',
             headers: { 'Content-Type': 'application/json' }
@@ -273,20 +276,10 @@ function createModalWithEdit(content, gridId, locationId) {
             .catch(err => console.error(err));
     };
 
-    // Close Button
-    const closeButton = document.createElement('span');
-    closeButton.className = 'close-modal';
-    closeButton.innerHTML = '&times;';
-    closeButton.onclick = function () {
-        modal.style.display = 'none';
-        modal.remove();
-    };
-
     modalMenuBar.appendChild(rawButton);
     modalMenuBar.appendChild(editButton);
     modalMenuBar.appendChild(addLocationButton);
     modalMenuBar.appendChild(deleteButton);
-    modalMenuBar.appendChild(closeButton);
 
     modalContent.innerHTML = content;
 
