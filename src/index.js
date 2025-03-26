@@ -33,7 +33,25 @@ app.use(express.static(path.join(__dirname, 'frontend')));
 app.use(express.json());
 
 app.get('/grid', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'data', 'locations.json'));
+    let locations = [];
+    for (const row of fs.readdirSync(path.join(__dirname, 'frontend', 'grids'))) {
+        for (const column of fs.readdirSync(path.join(__dirname, 'frontend', 'grids', row))) {
+            let locationNames = [];
+            for (const file of fs.readdirSync(path.join(__dirname, 'frontend', 'grids', row, column))) {
+                const content = fs.readFileSync(path.join(__dirname, 'frontend', 'grids', row, column, file), 'utf8');
+                const contents = content.match(/<strong>(.*?)<\/strong>/);
+                let name = file.split('.')[0];
+                if (contents) {
+                    name = content.match(/<strong>(.*?)<\/strong>/)[1];
+                }
+                locationNames.push(name);
+            }
+            const grid = column + row;
+            locations.push({ grid: grid, locations: locationNames }); 
+        }
+    }
+
+    res.status(200).send(locations);
 });
 
 
@@ -60,7 +78,7 @@ app.post('/location/:grid', (req, res) => {
         const location = column + row + '(' + number + ')';
         const name = req.body.name || location;
 
-        const locationTitle = '<p style="text-align: center;"><big><strong>' + location + '. ' + name + '</strong></big></p>'
+        const locationTitle = '<p style="text-align: center;"><big><strong>' + name + '</strong></big></p><br /><p>Description Here</p>';
 
         fs.writeFileSync(path.join(gridPath, number + '.html'), locationTitle, { flag: 'w' });
         res.status(201).send(`Grid ${column}${row}${number} created`);

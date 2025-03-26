@@ -14,7 +14,7 @@ function createHex(grid) {
     locationsDiv.className = 'locations';
     for (const [i, location] of grid.locations.entries()) {
         const locationDiv = document.createElement('div');
-        locationDiv.innerText = location.name;
+        locationDiv.innerText = location;
         locationDiv.className = 'location';
         locationsDiv.appendChild(locationDiv);
 
@@ -68,7 +68,7 @@ mapContainer.addEventListener('wheel', (event) => {
 //*******************************************************************************
 let posX = 0;
 let posY = 0;
-document.addEventListener('keydown', (event) => {
+mapContainer.addEventListener('keydown', (event) => {
     const step = 10;
     switch (event.key) {
         case 'w':
@@ -197,6 +197,26 @@ function createModalWithEdit(content, gridId, locationId) {
         }
     }
 
+    const deleteButton = document.createElement('button');
+    deleteButton.className = 'delete-location';
+    deleteButton.textContent = 'Delete';
+    deleteButton.onclick = function () {
+        fetch(`/location/${gridId}/${locationId}`, {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' }
+        })
+            .then(response => {
+                if (response.ok) {
+                    console.log('Location deleted');
+                    closeModals();
+                    showModal(gridId);
+                } else {
+                    console.log('Failed to delete location');
+                }
+            })
+            .catch(err => console.error(err));
+    };
+
 
     const editButton = document.createElement('button');
     editButton.className = 'edit-modal';
@@ -265,6 +285,7 @@ function createModalWithEdit(content, gridId, locationId) {
     modalMenuBar.appendChild(rawButton);
     modalMenuBar.appendChild(editButton);
     modalMenuBar.appendChild(addLocationButton);
+    modalMenuBar.appendChild(deleteButton);
     modalMenuBar.appendChild(closeButton);
 
     modalContent.innerHTML = content;
