@@ -43,6 +43,8 @@ app.get('/grid', (req, res) => {
                 let name = file.split('.')[0];
                 if (contents) {
                     name = content.match(/<strong>(.*?)<\/strong>/)[1];
+                } else {
+                    console.error("No name found for " + file);
                 }
                 locationNames.push(name);
             }

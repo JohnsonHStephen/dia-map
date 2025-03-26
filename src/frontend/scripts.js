@@ -313,10 +313,8 @@ function showModal(gridId) {
         fetch(`/grids/${gridId}`)
             .then(response => response.text())
             .then(locations => {
-                console.log(locations);
                 for (const location of locations.split(',')) {
                     if (location === '') continue;
-                    console.log(location);
                     fetch(`/location/${gridId}/${location}`)
                     .then(response => response.text())
                     .then(content => {
